@@ -1,0 +1,39 @@
+In programming, a vector typically refers to a dynamic array-like data structure provided by many programming languages and libraries. It is a container that stores a sequence of elements and dynamically resizes itself to accommodate new elements when needed.
+
+In C++, the standard library provides a container called std::vector, which is a versatile and efficient implementation of a dynamic array. Here are some key characteristics of std::vector:
+
+Dynamic Size: Unlike traditional arrays, std::vector can dynamically grow or shrink in size as elements are added or removed. Memory is allocated dynamically, and the container handles resizing internally.
+Random Access: std::vector provides constant-time access to elements based on their indices, similar to arrays. This allows for efficient random access and element modification.
+Contiguous Memory: Like arrays, elements in a std::vector are stored in contiguous memory locations. This ensures efficient memory access and cache utilization.
+Efficient Insertion and Deletion: While insertion and deletion operations may require resizing the underlying array and moving elements, std::vector provides efficient operations for adding or removing elements at the end of the vector (push_back, pop_back) due to amortized constant-time complexity.
+Standard Library Support: std::vector is part of the C++ Standard Library, making it widely available and portable across different platforms and compilers.
+Template Class: std::vector is a template class, allowing it to store elements of any data type. This provides flexibility and type safety.
+
+#include <iostream>
+#include <vector>
+
+int main() {
+    // Create an empty vector of integers
+    std::vector<int> vec;
+
+    // Add elements to the vector
+    vec.push_back(10);
+    vec.push_back(20);
+    vec.push_back(30);
+
+    // Access elements using indices
+    std::cout << "Elements of the vector: ";
+    for (size_t i = 0; i < vec.size(); ++i) {
+        std::cout << vec[i] << " ";
+    }
+    std::cout << std::endl;
+
+    // Iterate over elements using range-based for loop
+    std::cout << "Elements of the vector (using range-based for loop): ";
+    for (int element : vec) {
+        std::cout << element << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}

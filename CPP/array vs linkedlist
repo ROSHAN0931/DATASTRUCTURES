@@ -1,0 +1,26 @@
+Arrays:
+
+Contiguous Memory: Arrays store elements in contiguous memory locations, meaning that elements are stored one after another in memory.
+Random Access: Elements in an array can be accessed directly using their indices. This allows for constant-time access to elements.
+Fixed Size: The size of an array is fixed and determined at compile time. Once created, the size cannot be changed.
+Memory Efficiency: Arrays can be more memory-efficient than linked lists, especially for primitive data types, because they do not require extra memory for pointers.
+Insertion and Deletion: Insertion and deletion operations in arrays, especially in the middle, can be inefficient as elements may need to be shifted to accommodate the changes.
+Dynamic Arrays: Some languages provide dynamic arrays (e.g., C++ std::vector, Java ArrayList) that automatically resize themselves when needed, providing a compromise between arrays and linked lists.
+Linked Lists:
+
+Non-contiguous Memory: Linked lists store elements in nodes, with each node containing the element and a pointer to the next (and optionally previous) node. Nodes are not required to be stored contiguously in memory.
+Sequential Access: Linked lists require sequential access starting from the head (or tail for doubly linked lists) to access elements. Random access is not efficient.
+Dynamic Size: Linked lists can dynamically grow or shrink in size as needed since memory is allocated dynamically.
+Insertion and Deletion: Insertion and deletion operations, especially at the beginning or end of the list, are efficient in linked lists as they involve updating pointers, with no need for shifting elements.
+Memory Overhead: Linked lists require additional memory for storing pointers/references to the next (and previous for doubly linked lists) node, making them less memory-efficient compared to arrays, especially for primitive data types.
+Types of Linked Lists: There are different types of linked lists, such as singly linked lists, doubly linked lists, and circular linked lists, each with its own characteristics and use cases.
+When to Use Which:
+
+Use arrays when:
+You need random access to elements based on indices.
+The size of the collection is known and fixed, or it doesn't change frequently.
+Memory efficiency is a concern, especially for primitive data types.
+Use linked lists when:
+Dynamic resizing is needed or the size of the collection is unknown.
+Frequent insertion or deletion operations are expected, especially at the beginning or end of the collection.
+You can tolerate the memory overhead of storing pointers/references.
