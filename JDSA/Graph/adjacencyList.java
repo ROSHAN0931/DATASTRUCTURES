@@ -1,4 +1,3 @@
-// Node structure for adjacency list
 class Node {
     int vertex;
     Node next;
@@ -9,7 +8,6 @@ class Node {
     }
 }
 
-// Graph class
 class Graph {
     private int vertices;
     private Node[] adjList; 
