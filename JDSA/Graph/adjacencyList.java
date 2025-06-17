@@ -1,50 +1,42 @@
-import java.util.LinkedList;
-import java.util.List;
-
-class adjacencyList {
-    private List<List<Integer>> adjacencyList;
+class Graph {
+    private int[][] adjMatrix;
     private int numVertices;
 
-    // Constructor
-    public adjacencyList(int numVertices) {
-        this.numVertices = numVertices;
-        adjacencyList = new LinkedList<>();
-
-        // Initialize each adjacency list for all vertices
-        for (int i = 0; i < numVertices; i++) {
-            adjacencyList.add(new LinkedList<>());
-        }
+    public Graph(int vertices) {
+        this.numVertices = vertices;
+        adjMatrix = new int[vertices][vertices];
     }
 
-    // Add edge
-    public void addEdge(int source, int destination) {
-        // Adding an edge to the graph (for undirected graph, add both ways)
-        adjacencyList.get(source).add(destination);
-        adjacencyList.get(destination).add(source);
+    public void addEdge(int i, int j) {
+        adjMatrix[i][j] = 1;
+        adjMatrix[j][i] = 1; 
     }
 
-    // Print the adjacency list
     public void printGraph() {
+        System.out.println("Adjacency Matrix:");
         for (int i = 0; i < numVertices; i++) {
-            System.out.print("Vertex " + i + ": ");
-            for (Integer vertex : adjacencyList.get(i)) {
-                System.out.print(vertex + " ");
+            for (int j = 0; j < numVertices; j++) {
+                System.out.print(adjMatrix[i][j] + " ");
             }
             System.out.println();
         }
     }
+}
 
+
+public class Main {
     public static void main(String[] args) {
-        // Create a graph with 4 vertices
-        adjacencyList graph = new adjacencyList(4);
+        Graph g = new Graph(5);  
 
-        // Add edges
-        graph.addEdge(0, 1);
-        graph.addEdge(0, 2);
-        graph.addEdge(1, 2);
-        graph.addEdge(2, 3);
+        g.addEdge(0, 1);
+        g.addEdge(0, 4);
+        g.addEdge(1, 2);
+        g.addEdge(1, 3);
+        g.addEdge(1, 4);
+        g.addEdge(2, 3);
+        g.addEdge(3, 4);
 
-        // Print the adjacency list
-        graph.printGraph();
+        g.printGraph();
     }
 }
+
